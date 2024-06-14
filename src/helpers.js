@@ -5,7 +5,7 @@ const newPurchase={
     id:nanoid(10),
     name:name||`no designation`,
     priceInCents:price||`0`,
-    inStock:false,
+    inStock:true,
 }
 purchases.push(newPurchase)
 return purchases
@@ -31,5 +31,11 @@ function update(purchases,id,name,price){
 function clear(){
     return []
 }
+function addToCart(purchases,addToCart,id){
+    let item=purchases.find(purchase=>purchase.id===id)
+    addToCart.push(item)
+    return addToCart
 
-module.exports={clear,create,destroy,show,index,update}
+}
+
+module.exports={addToCart,clear,create,destroy,show,index,update}

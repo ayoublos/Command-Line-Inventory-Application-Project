@@ -9,7 +9,8 @@
     "update": "node index.js update",
     "destroy": "node index.js destroy",
     "show": "node index.js show",
-    "clear": "node index.js clear"
+    "clear": "node index.js clear",
+    "add": "node index.js add"
   },
   "keywords": [],
   "author": "",
