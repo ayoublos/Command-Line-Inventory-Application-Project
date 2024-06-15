@@ -18,6 +18,7 @@ function run(){
     switch(action){
         case `create`: 
             updatedList=create(purchases,purchaseName,priceInCents)
+            console.log(typeof updatedList)
             writeToFile=true;
             break;
         case `add`: 
