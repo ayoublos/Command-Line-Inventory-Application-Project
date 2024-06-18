@@ -1,6 +1,6 @@
 const{readFileFunction,writeFileFunction}=require(`./src/purchaseController`)
 
-const{addToCart,clear,create,destroy,show,index, update}=require(`./src/helpers`)
+const{addToCart,clear,create,destroy,show,index, update,made,expensive}=require(`./src/helpers`)
 
 function run(){
     const purchases=readFileFunction(`data`,`purchases.json`)
@@ -47,6 +47,16 @@ function run(){
         updatedList=clear()
         writeToFile=true
         break;
+    
+    case `made`:
+        console.log(made(purchases))
+        writeToFile=false
+        break;
+    case `expensive`:
+        console.log(expensive(purchases))
+        writeToFile=false
+        break;
+    
    }
    if(writeToFile){
     writeFileFunction(`data`,`purchases.json`,updatedList)

@@ -1,5 +1,5 @@
 {
-  "name": "command-line-inventory-application-projec",
+  "name": "command-line-inventory-application-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,12 +10,18 @@
     "destroy": "node index.js destroy",
     "show": "node index.js show",
     "clear": "node index.js clear",
-    "add": "node index.js add"
+    "add": "node index.js add",
+    "made": "node index.js made",
+    "expensive": "node index.js expensive",
+    "test":"jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "nanoid": "^3.3.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

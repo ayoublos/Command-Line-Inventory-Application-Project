@@ -1,11 +1,17 @@
 const{nanoid}=require(`nanoid`)
 
 function create(purchases,name,price){
+    let array=[true,false]
+    let randomIndex=Math.floor(Math.random()*2)
+    console.log(randomIndex)
+    
 const newPurchase={
+
     id:nanoid(10),
     name:name||`no designation`,
     priceInCents:price||`0`,
     inStock:true,
+    madeInStates:array[randomIndex]
 }
 purchases.push(newPurchase)
 return purchases
@@ -23,6 +29,7 @@ function index(purchases){
 }
 function update(purchases,id,name,price){
     let index=purchases.findIndex(purchase=>purchase.id===id);
+    // let purchaseId=id||purchases[index].id
     purchases[index].id=id;
     purchases[index].name=name;
     purchases[index].priceInCents=price
@@ -37,5 +44,13 @@ function addToCart(purchases,addToCart,id){
     return addToCart
 
 }
+function made(purchases){
+    return purchases.filter(el=>el.madeInStates)
 
-module.exports={addToCart,clear,create,destroy,show,index,update}
+}
+function expensive(purchases){
+    return purchases.filter(el=>+el.priceInCents>100)
+
+}
+
+module.exports={addToCart,clear,create,destroy,show,index,update,made,expensive}
